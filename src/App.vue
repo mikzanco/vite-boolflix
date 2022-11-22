@@ -47,8 +47,8 @@ export default {
 <template>
   <AppHeader/>
   <main>
-    <AppMain/>
-    <AppMain/>
+    <AppMain title="film" type="movie"/>
+    <AppMain title="Serie Tv" type="tv"/>
   </main>
   
 </template>

@@ -17,7 +17,13 @@ export default {
             <img src="/logo-boolflix.png" alt="Boolfix">
         </div>
         <div class="input p-3 align-items-center">
-            <input type="text" placeholder="search">
+            <input 
+            @keyup.enter="$emit('search')" 
+            type="text" 
+            v-model="store.apiParams.query"
+            placeholder="search"
+            class="form-control">
+            
         </div>
     </div>
   </header>
