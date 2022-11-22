@@ -1,0 +1,10 @@
+@use './partials/variables' as *;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+body{
+    background-color: $secondary-color;
+    color: $primary-color;
+    min-height: 100vh;
+    max-width: 100vw;
+}

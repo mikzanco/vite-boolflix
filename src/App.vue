@@ -21,6 +21,22 @@ export default {
     AppMain,
     AppSearch,
     AppCardList
+  },
+  methods:{
+    getApi(type){
+      axios.get(store.apiUrl + type, {params: store.apiParams})
+      .then(res =>{
+        store[type] = res.data.results;
+        
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    }
+  },
+  mounted(){
+    this.getApi('movie')
+    this.getApi('tv')
   }
 }
 </script>
