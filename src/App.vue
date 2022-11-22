@@ -24,7 +24,10 @@ export default {
   },
   methods:{
     getApi(type){
-      axios.get(store.apiUrl + type, {params: store.apiParams})
+      axios.get(store.apiUrl + type, {
+        params: 
+        store.apiParams
+        })
       .then(res =>{
         store[type] = res.data.results;
         
@@ -44,7 +47,8 @@ export default {
 <template>
   <AppHeader/>
   <main>
-
+    <AppMain/>
+    <AppMain/>
   </main>
   
 </template>

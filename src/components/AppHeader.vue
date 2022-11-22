@@ -1,17 +1,23 @@
 <script>
+
+import {store} from '../data/store';
+
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    data(){
+        store
+    }
 }
 </script>
 
 <template>
   <header>
-    <div class="container d-flex ">
-        <div class="logo">
+    <div class="container">
+        <div class="logo p-3 align-items-center">
             <img src="/logo-boolflix.png" alt="Boolfix">
         </div>
-        <div>
-            
+        <div class="input p-3 align-items-center">
+            <input type="text" placeholder="search">
         </div>
     </div>
   </header>
@@ -20,5 +26,20 @@ export default {
 
 
 <style lang="scss" scoped>
-
+   header{
+    width: 100vw;
+    height: 100px;
+    .container{
+        height: 100%;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+            img{
+                height: 80px;
+                width: 200px;
+                
+            }
+        }
+    }
+   
 </style>
