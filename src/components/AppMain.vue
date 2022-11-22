@@ -1,6 +1,6 @@
 <script>
 
-import {store} from './../data/store'
+import {store} from '../data/store.js'
 
 export default {
     name: 'AppMain',

@@ -1,6 +1,6 @@
 <script>
 
-import {store} from './../data/store';
+import {store} from '../data/store.js';
 
 export default {
     name: 'AppHeader',
@@ -15,11 +15,25 @@ export default {
 <template>
   <header>
     <div class="container">
-        <div class="logo p-3 align-items-center d-">
+        <div class="logo p-3 align-items-center ">
             <img src="/logo-boolflix.png" alt="Boolfix">
         </div>
-        <div class="input ">
-            <input class="form-control" type="text" value="Readonly input here..." aria-label="readonly input example" readonly>
+        <div class="input-group align-items-center ">
+            <input 
+            @keyup.enter="$emit('startSearch')"
+            v-model.trim="store.apiParams.query"
+            type="text" 
+            
+            class="form-control" 
+            aria-label="Text input with dropdown button">
+            <button @click="$emit('startSearch')" class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select</button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
             
         </div>
     </div>

@@ -36,13 +36,13 @@ export default {
         console.log(err);
       })
     },
-    // startSearch(){
-      
-    // }
+    startSearch(){
+      this.getApi('movie');
+      this.getApi('tv');
+    }
   },
   mounted(){
-    this.getApi('movie')
-    this.getApi('tv')
+    this.startSearch();
   }
 }
 </script>
@@ -50,7 +50,7 @@ export default {
 <template>
   
   <div>
-    <AppHeader/>
+    <AppHeader />
     <AppMain title="film" type="movie"/>
     <AppMain title="Serie Tv" type="tv"/>
   </div>
