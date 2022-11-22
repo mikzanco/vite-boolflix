@@ -1,7 +1,7 @@
 <script>
 
   import axios from 'axios'
-  import {store} from './data/store'
+  import {store} from './data/store.js'
 
   import AppHeader from './components/AppHeader.vue'
   import AppMain from './components/AppMain.vue'
@@ -35,7 +35,10 @@ export default {
       .catch(err => {
         console.log(err);
       })
-    }
+    },
+    // startSearch(){
+      
+    // }
   },
   mounted(){
     this.getApi('movie')
@@ -45,11 +48,12 @@ export default {
 </script>
 
 <template>
-  <AppHeader/>
-  <main>
+  
+  <div>
+    <AppHeader/>
     <AppMain title="film" type="movie"/>
     <AppMain title="Serie Tv" type="tv"/>
-  </main>
+  </div>
   
 </template>
 

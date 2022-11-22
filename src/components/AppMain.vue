@@ -1,11 +1,17 @@
 <script>
 
-import {store} from '../data/store'
+import {store} from './../data/store'
 
 export default {
     name: 'AppMain',
+    props:{
+        title: String
+    },
     data(){
-        store
+        return{
+            store
+        }
+        
     }
 }
 
@@ -14,7 +20,7 @@ export default {
 <template>
 
   <h1>
-    
+    {{title}}
   </h1>
 </template>
 
