@@ -2,6 +2,8 @@
 
 import { store } from '../data/store';
 
+import StarRating from "vue-star-rating"
+
 // installato falg-icons da npm e importato qui, adesso importato in general per averlo li
 
 
@@ -9,6 +11,9 @@ export default {
     name: 'MovieCard',
     props:{
         card: Object
+    },
+    components: {
+        StarRating
     },
     data(){
         return{
@@ -22,10 +27,14 @@ export default {
             }
             return "https://image.tmdb.org/t/p/original" + this.card.poster_path;
         },
+        rating(){
+            return this.card.vote_average / 2;
+        },
         // crato metodo per gestire le icone e traformato il en in gb per icona corretta; inseito icona it se it
         flags(){
             if(this.card.original_language === 'en') return "fi fi-gb";
             else if(this.card.original_language === 'it') return "fi fi-it";
+            else return "fi fi-xx";
         }
         
     }
@@ -44,13 +53,26 @@ export default {
             <p>Titolo: {{ card.title || card.name }}</p>
             <p>Titolo originale: {{ card.original_title || card.original_name}}</p>
             <p>Lingua: <span :class="flags()"></span></p>
-            <p>Voto medio: {{card.vote_average}}</p>
+            <!-- <div class="rating-stars d-flex">
+                <p>Voto medio:</p>
+                <star-rating
+                    :star-size="15"
+                    :rating="rating()"
+                    :read-only="true"
+                    :increment="0.5"
+                    :active-color="yellow"
+                    :show-rating="false"
+                    :glow="2"
+                    inactive-color="white"
+                    >
+                </star-rating>
+            </div> -->
         </div>
     </div>
    
 </template>
 
-
+<!-- {{card.vote_average}} -->
 
 <style lang="scss" scoped>
 // dato grandezza img
