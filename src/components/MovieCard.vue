@@ -69,14 +69,14 @@ export default {
 
 <style lang="scss" scoped>
 // dato grandezza img
-    
+@use '../style/partials/variables';
     .mz-card{
         cursor: pointer;
         position: relative;
         margin: 10px;
         
         p{
-            color: white;
+            color: red;
         }
         .imgcard{
             
@@ -95,7 +95,8 @@ export default {
             left: 0;
             
             .overview{
-                height: 200px;
+                height: 150px;
+                font-size: 0.85rem;
                 overflow-y: scroll;
             }
         }
