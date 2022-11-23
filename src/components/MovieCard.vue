@@ -33,13 +33,21 @@ export default {
 </script>
 
 <template>
-  <div>--{{ card.title || card.name }}, {{ card.original_title || card.original_name}}, <span :class="flags()"></span> , {{card.vote_average}}--</div>
+  
 
     <!-- inserito lìimmagine con getImg nei methos e riporatat qui, aggiungere poi img vuota se non presente nella lista -->
-
-  <!-- <div>
-    <img :src="getImg()" >
-  </div> -->
+    <div class="mz-card">
+        <div>
+            <img :src="getImg()" >
+        </div> 
+        <div>
+            <p>Titolo: {{ card.title || card.name }}</p>
+            <p>Titolo originale: {{ card.original_title || card.original_name}}</p>
+            <p>Lingua: <span :class="flags()"></span></p>
+            <p>Voto medio: {{card.vote_average}}</p>
+        </div>
+    </div>
+   
 </template>
 
 

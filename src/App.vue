@@ -56,7 +56,7 @@ export default {
   
   <div>
     <AppHeader @search="startSearch"/>
-    <AppMain v-if="store.movie.length > 0" title="film" type="movie"/>
+    <AppMain v-if="store.movie.length > 0" title="Film" type="movie"/>
     <AppMain v-if="store.tv.length > 0" title="Serie Tv" type="tv"/>
   </div>
   
