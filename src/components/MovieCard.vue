@@ -1,6 +1,8 @@
 <script>
 
-import { store } from '../data/store'
+import { store } from '../data/store';
+
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 export default {
     name: 'MovieCard',
@@ -21,6 +23,7 @@ export default {
         },
         flags(){
             if(this.card.original_language === 'en') return "fi fi-gb";
+            else if(this.card.original_language === 'it') return "fi fi-it";
         }
         
     }
@@ -28,11 +31,11 @@ export default {
 </script>
 
 <template>
-  <!-- <div>--{{ card.title || card.name }}, {{ card.original_title || card.original_name}}, {{card.original_language}} , {{card.vote_average}}--</div> -->
+  <div>--{{ card.title || card.name }}, {{ card.original_title || card.original_name}}, <span :class="flags()"></span> , {{card.vote_average}}--</div>
 
-  <div>
+  <!-- <div>
     <img :src="getImg()" >
-  </div>
+  </div> -->
 </template>
 
 
