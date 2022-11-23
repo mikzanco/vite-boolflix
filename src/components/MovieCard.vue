@@ -59,7 +59,6 @@ export default {
                     :star-size="15"
                     :rating="rating()"
                     :read-only="true"
-                    :increment="0.5"
                     :active-color="yellow"
                     :show-rating="false"
                     :glow="2"
