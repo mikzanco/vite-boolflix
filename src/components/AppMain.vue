@@ -27,9 +27,12 @@ export default {
 
 <template>
 
-  <h1>
-    {{title}}
-  </h1>
+    <div class="title">
+        <h1>
+            {{title}}
+        </h1>
+    </div>
+  
   <div class="container d-flex flex-wrap">
 
     <MovieCard :card="card" v-for="card in store[type]" :key="card.id"/>
@@ -42,7 +45,14 @@ export default {
 
 
 <style lang="scss" scoped>
-    h1, {
-        color: white;
+    .title{
+        display: flex;
+        justify-content: center;
+        margin: 100px 0;
+        h1{
+            color: white;
+            
+        }
     }
+    
 </style>

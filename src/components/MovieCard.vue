@@ -44,12 +44,12 @@ export default {
 <template>
   
 
-    <!-- inserito lìimmagine con getImg nei methos e riporatat qui, aggiungere poi img vuota se non presente nella lista -->
-    <div class="mz-card">
-        <div>
+    
+    <div class="mz-card"  >
+        <div class="imgcard">
             <img :src="getImg()" >
         </div> 
-        <div>
+        <div class="info" >
             <p>Titolo: {{ card.title || card.name }}</p>
             <p>Titolo originale: {{ card.original_title || card.original_name}}</p>
             <p>Lingua: <span :class="flags()"></span></p>
@@ -66,7 +66,7 @@ export default {
                     >
                 </star-rating>
             </div> -->
-            <p>overview: {{card.overview || 'testo mancante'}}</p>
+            <p>Overview: {{card.overview || 'testo mancante'}}</p>
         </div>
     </div>
    
@@ -76,8 +76,41 @@ export default {
 
 <style lang="scss" scoped>
 // dato grandezza img
+    
+    .mz-card{
+        cursor: pointer;
+        position: relative;
+        
+        p{
+            color: white;
+        }
+        .imgcard{
+            display: block;
+        }
+
+
+        .info{
+            display: none;
+            position: absolute;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+            top: 0;
+            left: 0;
+            
+        }
+    }
     img{
         width: 300px;
         height: 600px;
+        padding: 10px;
+
+    }
+    .mz-card:hover .imgcard{
+        display: none;
+    }
+    .mz-card:hover .info{
+        display: block;
     }
 </style>
