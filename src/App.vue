@@ -37,9 +37,13 @@ export default {
       })
     },
     startSearch(){
-
-      this.getApi('movie');
-      this.getApi('tv');
+      if(store.type == ''){
+        this.getApi('movie');
+        this.getApi('tv');
+      }else{
+        this.getApi(store.type);
+      }
+      
     }
   },
   mounted(){

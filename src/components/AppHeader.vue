@@ -26,7 +26,7 @@ export default {
             class="form-control" 
             placeholder="Cerca una serie o un film">
             <div class="col-2 m-2 align-items-center">
-                <select v-model="store.categoryToSearch" class="form-select" placeholder="All">
+                <select v-model="store.type" class="form-select" placeholder="All">
                     <option value="" selected>All</option>
                     <option value="film">Film</option>
                     <option value="tv">SerieTv</option>
