@@ -66,7 +66,7 @@ export default {
                     >
                 </star-rating>
             </div> -->
-            <p>Overview: {{card.overview || 'testo mancante'}}</p>
+            <p class="overview">Overview: {{card.overview || 'testo mancante'}}</p>
         </div>
     </div>
    
@@ -80,6 +80,7 @@ export default {
     .mz-card{
         cursor: pointer;
         position: relative;
+        margin: 10px;
         
         p{
             color: white;
@@ -90,27 +91,31 @@ export default {
 
 
         .info{
-            display: none;
+            // display: none;
             position: absolute;
             background-color: black;
             width: 100%;
             height: 100%;
-            padding: 5px;
+            padding: 50px;
             top: 0;
             left: 0;
             
+            .overview{
+                height: 250px;
+                overflow-y: scroll;
+            }
         }
     }
     img{
         width: 300px;
-        height: 600px;
+        height: 500px;
         padding: 10px;
 
     }
-    .mz-card:hover .imgcard{
-        display: none;
-    }
-    .mz-card:hover .info{
-        display: block;
-    }
+    // .mz-card:hover .imgcard{
+    //     display: none;
+    // }
+    // .mz-card:hover .info{
+    //     display: block;
+    // }
 </style>
