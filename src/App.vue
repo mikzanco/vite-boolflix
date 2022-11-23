@@ -6,7 +6,7 @@
   import AppHeader from './components/AppHeader.vue'
   import AppMain from './components/AppMain.vue'
   import AppSearch from './components/AppSearch.vue'
-  import AppCardList from './components/AppCardList.vue'
+  
   
 
 export default {
@@ -20,7 +20,7 @@ export default {
     AppHeader,
     AppMain,
     AppSearch,
-    AppCardList
+    
   },
   methods:{
     getApi(type){

@@ -2,7 +2,9 @@
 
 import {store} from '../data/store.js'
 
-import AppCardList from './AppCardList.vue'
+
+
+import MovieCard from './MovieCard.vue'
 
 export default {
     name: 'AppMain',
@@ -17,7 +19,7 @@ export default {
         
     },
     components:{
-        AppCardList,
+        MovieCard,
     }
 }
 
@@ -29,18 +31,18 @@ export default {
     {{title}}
   </h1>
   <div class="container d-flex flex-wrap">
-    <ul>
-    <li v-for="card in store[type]" :key="card.id">card</li>
-  </ul>
+
+    <MovieCard :card="card" v-for="card in store[type]" :key="card.id"/>
+    
   </div>
   
-  <AppCardList/>
+  
 </template>
 
 
 
 <style lang="scss" scoped>
-    h1, li{
+    h1, {
         color: white;
     }
 </style>
