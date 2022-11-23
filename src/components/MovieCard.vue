@@ -66,6 +66,7 @@ export default {
                     >
                 </star-rating>
             </div> -->
+            <p>overview: {{card.overview || 'testo mancante'}}</p>
         </div>
     </div>
    
