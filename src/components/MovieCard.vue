@@ -2,7 +2,8 @@
 
 import { store } from '../data/store';
 
-import "/node_modules/flag-icons/css/flag-icons.min.css";
+// installato falg-icons da npm e importato qui, adesso importato in general per averlo li
+
 
 export default {
     name: 'MovieCard',
@@ -21,6 +22,7 @@ export default {
             }
             return "https://image.tmdb.org/t/p/original/" + this.card.poster_path;
         },
+        // crato metodo per gestire le icone e traformato il en in gb per icona corretta; inseito icona it se it
         flags(){
             if(this.card.original_language === 'en') return "fi fi-gb";
             else if(this.card.original_language === 'it') return "fi fi-it";
@@ -33,6 +35,8 @@ export default {
 <template>
   <div>--{{ card.title || card.name }}, {{ card.original_title || card.original_name}}, <span :class="flags()"></span> , {{card.vote_average}}--</div>
 
+    <!-- inserito lìimmagine con getImg nei methos e riporatat qui, aggiungere poi img vuota se non presente nella lista -->
+
   <!-- <div>
     <img :src="getImg()" >
   </div> -->
@@ -41,6 +45,7 @@ export default {
 
 
 <style lang="scss" scoped>
+// dato grandezza img
     img{
         width: 300px;
         height: 600px;
