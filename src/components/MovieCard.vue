@@ -28,7 +28,7 @@ export default {
             return "https://image.tmdb.org/t/p/original" + this.card.poster_path;
         },
         rating(){
-            return this.card.vote_average / 2;
+        Math.ceil(this.card.vote_average / 2)
         },
         // crato metodo per gestire le icone e traformato il en in gb per icona corretta; inseito icona it se it
         flags(){
@@ -53,26 +53,19 @@ export default {
             <p>Titolo: {{ card.title || card.name }}</p>
             <p>Titolo originale: {{ card.original_title || card.original_name}}</p>
             <p>Lingua: <span :class="flags()"></span></p>
-            <!-- <div class="rating-stars d-flex">
-                <p>Voto medio:</p>
-                <star-rating
-                    :star-size="15"
-                    :rating="rating()"
-                    :read-only="true"
-                    :active-color="yellow"
-                    :show-rating="false"
-                    :glow="2"
-                    inactive-color="white"
-                    >
-                </star-rating>
-            </div> -->
+            <p class="pt-3"><strong>Voto:</strong></p>
+            <div>
+
+                <p> :rating="rating()"</p> 
+                    
+            </div>
             <p class="overview">Overview: {{card.overview || 'testo mancante'}}</p>
         </div>
     </div>
    
 </template>
 
-<!-- {{card.vote_average}} -->
+
 
 <style lang="scss" scoped>
 // dato grandezza img
@@ -102,7 +95,7 @@ export default {
             left: 0;
             
             .overview{
-                height: 250px;
+                height: 200px;
                 overflow-y: scroll;
             }
         }

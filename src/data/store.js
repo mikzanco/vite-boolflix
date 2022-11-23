@@ -6,12 +6,13 @@ export const store = reactive({
         tv: [],
         movie: [],
         type: '',
-    apiParams:{
+        apiParams:{
         api_key: '4bb17dce1fc18e0756ab428f7da080f6',
         query: 'matrix',
         language: 'it-IT'
     },
-    // categoryToSearch:{
-        
-    // }
+    rating(){
+        Math.ceil(this.card.vote_average / 2)
+    }
+    
 })
