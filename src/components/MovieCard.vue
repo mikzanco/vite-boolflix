@@ -18,9 +18,9 @@ export default {
     methods: {
         getImg() {
             if (this.card.poster_path == null) {
-                return "https://upload.wikimedia.org/wikipedia/commons/b/b9/No_Cover.jpg";
+                return "https://www.hovistocose.it/img/nocover.jpg";
             }
-            return "https://image.tmdb.org/t/p/original/" + this.card.poster_path;
+            return "https://image.tmdb.org/t/p/original" + this.card.poster_path;
         },
         // crato metodo per gestire le icone e traformato il en in gb per icona corretta; inseito icona it se it
         flags(){
