@@ -18,23 +18,20 @@ export default {
         <div class="logo p-3 align-items-center ">
             <img src="/logo-boolflix.png" alt="Boolfix">
         </div>
-        <div class="input-group align-items-center ">
+        <div class="input-group align-items-center col.auto ">
             <input 
-            @keyup.enter="$emit('startSearch')"
+            @keyup.enter="$emit('search')"
             v-model.trim="store.apiParams.query"
             type="text" 
-            
             class="form-control" 
-            aria-label="Text input with dropdown button">
-            <button @click="$emit('startSearch')" class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select</button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-            
+            placeholder="Cerca una serie o un film">
+            <div class="col-2 m-2 align-items-center">
+                <select v-model="store.categoryToSearch" class="form-select" placeholder="All">
+                    <option value="" selected>All</option>
+                    <option value="film">Film</option>
+                    <option value="tv">SerieTv</option>
+                </select>
+            </div>
         </div>
     </div>
   </header>

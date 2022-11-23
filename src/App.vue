@@ -37,6 +37,7 @@ export default {
       })
     },
     startSearch(){
+
       this.getApi('movie');
       this.getApi('tv');
     }
@@ -50,7 +51,7 @@ export default {
 <template>
   
   <div>
-    <AppHeader />
+    <AppHeader @search="startSearch"/>
     <AppMain title="film" type="movie"/>
     <AppMain title="Serie Tv" type="tv"/>
   </div>
