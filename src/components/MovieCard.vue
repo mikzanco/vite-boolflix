@@ -86,12 +86,13 @@ export default {
             color: white;
         }
         .imgcard{
+            
             display: block;
         }
 
 
         .info{
-            // display: none;
+            display: none;
             position: absolute;
             background-color: black;
             width: 100%;
@@ -107,15 +108,13 @@ export default {
         }
     }
     img{
+        
         width: 300px;
         height: 500px;
         padding: 10px;
 
     }
-    // .mz-card:hover .imgcard{
-    //     display: none;
-    // }
-    // .mz-card:hover .info{
-    //     display: block;
-    // }
+    .mz-card:hover .info{
+        display: block;
+    }
 </style>
