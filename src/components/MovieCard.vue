@@ -50,16 +50,15 @@ export default {
             <img :src="getImg()" >
         </div> 
         <div class="info" >
-            <p>Titolo: {{ card.title || card.name }}</p>
-            <p>Titolo originale: {{ card.original_title || card.original_name}}</p>
-            <p>Lingua: <span :class="flags()"></span></p>
-            <p class="pt-3"><strong>Voto:</strong></p>
+            <p><span>Titolo:</span> {{ card.title || card.name }}</p>
+            <p><span>Titolo originale:</span> {{ card.original_title || card.original_name}}</p>
+            <p><span>Lingua:</span> <span :class="flags()"></span></p>
             <div>
-
+                <p class="pt-3"><span>Voto:</span></p>
                 <p> :rating="rating()"</p> 
-                    
+                    <span></span>
             </div>
-            <p class="overview">Overview: {{card.overview || 'testo mancante'}}</p>
+            <p class="overview"><span>Overview:</span> {{card.overview || 'testo mancante'}}</p>
         </div>
     </div>
    
@@ -93,7 +92,9 @@ export default {
             padding: 50px;
             top: 0;
             left: 0;
-            
+            span{
+                color: white;
+            }
             .overview{
                 height: 150px;
                 font-size: 0.85rem;

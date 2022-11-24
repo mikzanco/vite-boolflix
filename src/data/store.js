@@ -8,7 +8,7 @@ export const store = reactive({
         type: '',
         apiParams:{
         api_key: '4bb17dce1fc18e0756ab428f7da080f6',
-        query: 'matrix',
+        query: '',
         language: 'it-IT'
     },
     rating(){
