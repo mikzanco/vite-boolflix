@@ -34,7 +34,7 @@ export default {
         flags(){
             if(this.card.original_language === 'en') return "fi fi-gb";
             else if(this.card.original_language === 'it') return "fi fi-it";
-            else return "fi fi-xx";
+            else return "fi fi-xx ";
         }
         
     }
@@ -54,9 +54,12 @@ export default {
             <p><span>Titolo originale:</span> {{ card.original_title || card.original_name}}</p>
             <p><span>Lingua:</span> <span :class="flags()"></span></p>
             <div>
-                <p class="pt-3"><span>Voto:</span></p>
-                <p> :rating="rating()"</p> 
-                    <span></span>
+                <i 
+                    v-for="(n, index) in 5"
+                    :key="index"
+                    class="fa-star"
+                    :class="index < rating ? 'fa-solid' : 'fa-regular' ">
+                </i>
             </div>
             <p class="overview"><span>Overview:</span> {{card.overview || 'testo mancante'}}</p>
         </div>
@@ -73,7 +76,13 @@ export default {
         cursor: pointer;
         position: relative;
         margin: 10px;
-        
+        // try add transition
+        // &:hover{
+        //     .imgcard{
+        //         transform: scale(0.9);
+        //     }
+            
+        // }
         p{
             color: red;
         }
@@ -107,6 +116,7 @@ export default {
         width: 300px;
         height: 500px;
         padding: 10px;
+        
 
     }
     .mz-card:hover .info{
