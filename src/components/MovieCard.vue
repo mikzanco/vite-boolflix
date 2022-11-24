@@ -47,7 +47,7 @@ export default {
     
     <div class="mz-card"  >
         <div class="imgcard">
-            <img :src="getImg()" >
+            <img :src="getImg()" :alt="card.title || card.name">
         </div> 
         <div class="info" >
             <p><span>Titolo:</span> {{ card.title || card.name }}</p>
